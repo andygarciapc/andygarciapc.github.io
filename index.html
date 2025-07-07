@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4GEZ5SHE6D"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-4GEZ5SHE6D');
+	</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Garcia - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="icon" type="image/png" href="assets/images/portfolioicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <h1 class="logo">Andy Garcia</h1>
+            <p>Software Engineer</p>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h2>Welcome to My Portfolio</h2>
+            <p>A place for passion.</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="personal-summary">Hello! I'm Andy Garcia, a recent Computer Science graduate passionate about game development, software engineering, and AI integration. I enjoy working on projects that challenge my skills and allow me to create innovative solutions.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <a href="https://github.com/andygarciapc/ProjectMedieval" target="_blank" class="project-card">
+                    <h3>Title TBA</h3>
+                    <p>A videogame inspired by the likes of Mount and Blade, Minecraft, and Cube World.</p>
+                </a>
+				<a href="https://github.com/andygarciapc/GPTRPG3D" target="_blank" class="project-card">
+                    <h3>GPT-RPG</h3>
+                    <p>My senior project integrating ChatGPT into a Unity game, allowing for real-time NPC interactions and a dynamic combat system.</p>
+                </a>
+                <a href="https://github.com/andygarciapc/Videogame-Mods" target="_blank" class="project-card">
+                    <h3>Video-Game Modifications</h3>
+                    <p>Designed five game mods using C# that implemented new features into two different games.</p>
+                </a>
+                <a href="https://titus-maxum.itch.io/fire-and-furious" target="_blank" class="project-card">
+                    <h3>Fire and Furious</h3>
+                    <p>A collaborative game project with randomly generated levels and challenging enemy types.</p>
+                </a>
+                <a href="https://example.com/restaurant-app" target="_blank" class="project-card">
+                    <h3>Restaurant Android Application</h3>
+                    <p>Worked alongside a team of my peers to create a restaurant template app for android devices.</p>
+                </a>
+                <a href="https://example.com/csuf-map" target="_blank" class="project-card">
+                    <h3>CSUF Map iOS Application</h3>
+                    <p>Developed an iOS application that aids students in finding locations near the Fullerton campus.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>Walmart - Digital Team</h3>
+                    <p>Utilized digital tools and software to manage and fulfill online orders effectively</p>
+                    <p>Collaborated with a team to maintain an optimal and efficient workspace, reducing wait times from an average of 10 minutes to around 4 minutes</p>
+                </div>
+                <div class="experience-card">
+                    <h3>McDonalds - Crew Trainer</h3>
+                    <p>Trained over 50 employees on procedures and job etiquette for an optimal work environment</p>
+                    <p>Exemplified best practices such as consistency, speed, and effort, leading to shorter wait times</p>
+                </div>
+                <!-- Add more experience cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>If you would like to reach out, please fill out the form below or connect with me through social media.</p>
+            
+            <!-- Contact Form -->
+            <form id="contact-form" action="https://formspree.io/f/mblrbypj" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+    
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/andygarciapc/" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/andygarciapc" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://twitter.com/andygarciapc" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Andy Garcia</p>
+    </footer>
+
+    <button id="backToTop">↑</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
