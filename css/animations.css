@@ -1,0 +1,520 @@
+/* ==========================================================================
+   Animations - Keyframes, Transitions, and Motion
+   ========================================================================== */
+
+/* ==========================================================================
+   Sprite Animations
+   ========================================================================== */
+
+/* Idle breathing/bounce */
+.anim-idle {
+  animation: idle-bounce 1.5s steps(4) infinite;
+}
+
+@keyframes idle-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Floating items (collectibles, companion) */
+.anim-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Gentle bob (slower float) */
+.anim-bob {
+  animation: bob 3s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-4px) rotate(2deg); }
+  75% { transform: translateY(-4px) rotate(-2deg); }
+}
+
+/* Pulse glow */
+.anim-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.8; filter: brightness(1.2); }
+}
+
+/* Sprite walk cycle (4 frames) */
+.anim-walk {
+  animation: walk 0.4s steps(4) infinite;
+}
+
+@keyframes walk {
+  from { background-position-x: 0; }
+  to { background-position-x: -256px; } /* 4 frames x 64px */
+}
+
+/* ==========================================================================
+   UI Animations
+   ========================================================================== */
+
+/* Button press */
+.anim-press:active {
+  animation: press 0.1s steps(2);
+}
+
+@keyframes press {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+  100% { transform: translateY(0); }
+}
+
+/* Bounce attention */
+.anim-bounce {
+  animation: bounce 0.5s steps(4);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-8px); }
+  50% { transform: translateY(-4px); }
+  75% { transform: translateY(-12px); }
+}
+
+/* Shake (error, impact) */
+.anim-shake {
+  animation: shake 0.3s steps(4);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+}
+
+/* Pop in */
+.anim-pop {
+  animation: pop 0.3s steps(4);
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Fade in */
+.anim-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide in from bottom */
+.anim-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from right */
+.anim-slide-left {
+  animation: slide-left 0.4s ease-out forwards;
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================================================
+   Typewriter Effect
+   ========================================================================== */
+
+.typewriter {
+  overflow: hidden;
+  border-right: 4px solid var(--color-gold);
+  white-space: nowrap;
+  animation:
+    typing 2s steps(40, end),
+    blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--color-gold); }
+}
+
+/* Typewriter cursor only (for JS-controlled typing) */
+.typing-cursor {
+  display: inline-block;
+  width: 4px;
+  height: 1em;
+  background: var(--color-gold);
+  margin-left: 4px;
+  animation: blink-cursor 0.5s step-end infinite;
+}
+
+@keyframes blink-cursor {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ==========================================================================
+   Environment Animations
+   ========================================================================== */
+
+/* Torch flicker */
+.anim-torch {
+  animation: torch-flicker 0.2s steps(3) infinite;
+}
+
+@keyframes torch-flicker {
+  0%, 100% {
+    filter: brightness(1);
+    transform: scaleY(1);
+  }
+  33% {
+    filter: brightness(1.1);
+    transform: scaleY(1.02);
+  }
+  66% {
+    filter: brightness(0.9);
+    transform: scaleY(0.98);
+  }
+}
+
+/* Star twinkle */
+.anim-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Cloud drift */
+.anim-cloud {
+  animation: cloud-drift 60s linear infinite;
+}
+
+@keyframes cloud-drift {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100vw); }
+}
+
+/* Grass sway */
+.anim-sway {
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+/* ==========================================================================
+   Game System Animations
+   ========================================================================== */
+
+/* XP gain float up */
+.anim-xp-gain {
+  animation: xp-float 1s ease-out forwards;
+}
+
+@keyframes xp-float {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-48px);
+  }
+}
+
+/* Level up celebration */
+.anim-level-up {
+  animation: level-up 1.5s ease-out forwards;
+}
+
+@keyframes level-up {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  25% {
+    transform: scale(1.5);
+    filter: brightness(2);
+  }
+  50% {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* Achievement unlock flash */
+.anim-achievement {
+  animation: achievement-unlock 0.5s ease-out;
+}
+
+@keyframes achievement-unlock {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Bar fill animation */
+.anim-bar-fill {
+  animation: bar-fill 0.5s ease-out forwards;
+}
+
+@keyframes bar-fill {
+  from { width: 0; }
+}
+
+/* ==========================================================================
+   Scroll-triggered Animations
+   ========================================================================== */
+
+/* Elements wait to animate until in view */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.scroll-animate-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.scroll-animate-stagger.in-view > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+.scroll-animate-stagger.in-view > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
+.scroll-animate-stagger.in-view > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+.scroll-animate-stagger.in-view > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
+.scroll-animate-stagger.in-view > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+.scroll-animate-stagger.in-view > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   Parallax Motion
+   ========================================================================== */
+
+.parallax-layer {
+  will-change: transform;
+}
+
+.parallax-slow {
+  transition: transform 0.1s linear;
+}
+
+.parallax-medium {
+  transition: transform 0.05s linear;
+}
+
+.parallax-fast {
+  transition: transform 0.02s linear;
+}
+
+/* ==========================================================================
+   Hover Transitions
+   ========================================================================== */
+
+/* Card hover lift */
+.hover-lift {
+  transition: transform var(--duration-fast), box-shadow var(--duration-fast);
+}
+
+.hover-lift:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Glow on hover */
+.hover-glow {
+  transition: filter var(--duration-fast), box-shadow var(--duration-fast);
+}
+
+.hover-glow:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 16px var(--color-gold);
+}
+
+/* Scale on hover */
+.hover-scale {
+  transition: transform var(--duration-fast);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .parallax-layer {
+    transform: none !important;
+  }
+
+  .scroll-animate {
+    opacity: 1;
+    transform: none;
+  }
+
+  .scroll-animate-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0ms !important;
+  }
+
+  .typewriter {
+    animation: none;
+    border-right: none;
+  }
+
+  .typing-cursor {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   Special Effects
+   ========================================================================== */
+
+/* Screen flash (for achievements, level up) */
+.screen-flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-gold);
+  pointer-events: none;
+  z-index: var(--z-max);
+  animation: screen-flash 0.3s ease-out forwards;
+}
+
+@keyframes screen-flash {
+  0% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+/* Particle burst */
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--color-gold);
+  pointer-events: none;
+  animation: particle-burst 1s ease-out forwards;
+}
+
+@keyframes particle-burst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--particle-x, 50px), var(--particle-y, -50px)) scale(0);
+  }
+}
+
+/* Collectible sparkle */
+.sparkle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle, var(--color-gold) 0%, transparent 70%);
+  pointer-events: none;
+  animation: sparkle 1s ease-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* CRT scanline effect (optional retro feel) */
+.crt-effect::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: var(--z-max);
+}

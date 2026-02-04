@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Design Tokens - Pixel Art RPG Portfolio
+   ========================================================================== */
+
+:root {
+  /* -------------------------------------------------------------------------
+     Colors - PICO-8 Extended Palette
+     ------------------------------------------------------------------------- */
+
+  /* Core palette */
+  --color-midnight: #1a1c2c;
+  --color-dark-purple: #5d275d;
+  --color-crimson: #b13e53;
+  --color-orange: #ef7d57;
+  --color-gold: #ffcd75;
+  --color-lime: #a7f070;
+  --color-forest: #38b764;
+  --color-teal: #257179;
+  --color-navy: #29366f;
+  --color-indigo: #3b5dc9;
+  --color-sky: #41a6f6;
+  --color-cyan: #73eff7;
+  --color-white: #f4f4f4;
+  --color-silver: #94b0c2;
+  --color-slate: #566c86;
+  --color-charcoal: #333c57;
+
+  /* Semantic colors */
+  --color-bg-primary: var(--color-midnight);
+  --color-bg-secondary: var(--color-charcoal);
+  --color-bg-elevated: #252836;
+
+  --color-text-primary: var(--color-white);
+  --color-text-secondary: var(--color-silver);
+  --color-text-muted: var(--color-slate);
+
+  --color-accent: var(--color-gold);
+  --color-accent-hover: var(--color-orange);
+
+  --color-link: var(--color-sky);
+  --color-link-hover: var(--color-cyan);
+
+  --color-success: var(--color-lime);
+  --color-warning: var(--color-orange);
+  --color-error: var(--color-crimson);
+  --color-info: var(--color-sky);
+
+  /* Section-specific colors */
+  --color-village-sky: linear-gradient(180deg, #29366f 0%, #3b5dc9 50%, #ef7d57 100%);
+  --color-village-ground: #38b764;
+  --color-dungeon-wall: #333c57;
+  --color-dungeon-floor: #252836;
+  --color-forest-canopy: #257179;
+  --color-forest-ground: #1a1c2c;
+  --color-guild-wood: #5d275d;
+  --color-guild-stone: #566c86;
+
+  /* -------------------------------------------------------------------------
+     Typography
+     ------------------------------------------------------------------------- */
+
+  --font-display: 'Press Start 2P', monospace;
+  --font-body: 'VT323', monospace;
+  --font-fallback: 'Courier New', Courier, monospace;
+
+  /* Font sizes (multiples of 8 for pixel-perfect alignment) */
+  --text-xs: 8px;
+  --text-sm: 16px;
+  --text-base: 24px;
+  --text-lg: 32px;
+  --text-xl: 40px;
+  --text-2xl: 48px;
+  --text-3xl: 64px;
+
+  /* Line heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.8;
+
+  /* -------------------------------------------------------------------------
+     Spacing (multiples of 8 for pixel grid)
+     ------------------------------------------------------------------------- */
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-16: 128px;
+
+  /* -------------------------------------------------------------------------
+     Layout
+     ------------------------------------------------------------------------- */
+
+  --container-max: 1200px;
+  --container-narrow: 800px;
+  --section-padding-y: var(--space-12);
+  --section-padding-x: var(--space-4);
+  --hud-height: 80px;
+
+  /* -------------------------------------------------------------------------
+     Borders & Shadows (pixel-style)
+     ------------------------------------------------------------------------- */
+
+  --border-width: 4px;
+  --border-color: var(--color-charcoal);
+  --border-pixel: var(--border-width) solid var(--color-charcoal);
+  --border-light: var(--border-width) solid var(--color-slate);
+  --border-accent: var(--border-width) solid var(--color-gold);
+
+  /* Hard pixel shadows (no blur) */
+  --shadow-sm: 4px 4px 0 var(--color-midnight);
+  --shadow-md: 8px 8px 0 var(--color-midnight);
+  --shadow-lg: 12px 12px 0 var(--color-midnight);
+  --shadow-inset: inset 4px 4px 0 rgba(0, 0, 0, 0.3);
+
+  /* -------------------------------------------------------------------------
+     Animation Timing
+     ------------------------------------------------------------------------- */
+
+  --duration-instant: 50ms;
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 800ms;
+  --duration-ambient: 2000ms;
+
+  /* Pixel-perfect step-based easing */
+  --ease-steps-2: steps(2);
+  --ease-steps-4: steps(4);
+  --ease-steps-8: steps(8);
+
+  /* -------------------------------------------------------------------------
+     Z-Index Scale
+     ------------------------------------------------------------------------- */
+
+  --z-background: -10;
+  --z-base: 0;
+  --z-above: 10;
+  --z-floating: 50;
+  --z-overlay: 100;
+  --z-modal: 200;
+  --z-toast: 300;
+  --z-hud: 400;
+  --z-max: 9999;
+
+  /* -------------------------------------------------------------------------
+     Game UI Specific
+     ------------------------------------------------------------------------- */
+
+  --bar-height: 16px;
+  --bar-bg: var(--color-charcoal);
+  --hp-color: var(--color-crimson);
+  --xp-color: var(--color-sky);
+  --portrait-size: 48px;
+
+  /* -------------------------------------------------------------------------
+     Breakpoints (as custom properties for reference)
+     ------------------------------------------------------------------------- */
+
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+  --bp-wide: 1280px;
+}
+
+/* Dark mode is default - light mode override if needed */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Could override for light theme, but keeping dark as primary */
+  }
+}

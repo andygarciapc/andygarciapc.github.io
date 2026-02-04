@@ -1,0 +1,442 @@
+/* ==========================================================================
+   Layout - Sections, Grid, and Responsive
+   ========================================================================== */
+
+/* ==========================================================================
+   Container
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+/* ==========================================================================
+   Game HUD Header
+   ========================================================================== */
+
+.game-hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--hud-height);
+  background: var(--color-bg-primary);
+  border-bottom: var(--border-pixel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  z-index: var(--z-hud);
+}
+
+.hud-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.player-portrait {
+  width: var(--portrait-size);
+  height: var(--portrait-size);
+  background: var(--color-bg-secondary);
+  border: var(--border-pixel);
+  image-rendering: pixelated;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.player-name {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--color-gold);
+}
+
+.stat-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.bar-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  width: 24px;
+}
+
+.bar-container {
+  width: 120px;
+  height: var(--bar-height);
+  background: var(--bar-bg);
+  border: 2px solid var(--color-slate);
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  transition: width var(--duration-normal);
+}
+
+.bar-fill.hp {
+  background: var(--hp-color);
+}
+
+.bar-fill.xp {
+  background: var(--xp-color);
+}
+
+.level-badge {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--color-gold);
+  margin-left: var(--space-1);
+}
+
+/* ==========================================================================
+   Main Navigation
+   ========================================================================== */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.nav-link {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  padding: var(--space-1) var(--space-2);
+  position: relative;
+  transition: color var(--duration-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-gold);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: var(--color-gold);
+  transition: width var(--duration-fast);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   HUD Right (Buttons)
+   ========================================================================== */
+
+.hud-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--color-bg-secondary);
+  border: var(--border-pixel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform var(--duration-fast), background var(--duration-fast);
+}
+
+.btn-icon:hover {
+  background: var(--color-bg-elevated);
+  transform: translateY(-2px);
+}
+
+.btn-icon:active {
+  transform: translateY(2px);
+}
+
+.btn-icon .badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  background: var(--color-crimson);
+  border-radius: 0;
+  font-family: var(--font-display);
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* ==========================================================================
+   Main Content
+   ========================================================================== */
+
+main {
+  padding-top: var(--hud-height);
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+.section {
+  min-height: 100vh;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-content {
+  width: 100%;
+  max-width: var(--container-max);
+  position: relative;
+  z-index: var(--z-above);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-gold);
+  text-align: center;
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+/* ==========================================================================
+   Section Backgrounds
+   ========================================================================== */
+
+/* Village (About) */
+.section-village {
+  background: linear-gradient(
+    180deg,
+    var(--color-navy) 0%,
+    var(--color-indigo) 40%,
+    var(--color-orange) 80%,
+    var(--color-crimson) 100%
+  );
+}
+
+.section-village.night {
+  background: linear-gradient(
+    180deg,
+    #0d0d1a 0%,
+    var(--color-midnight) 40%,
+    var(--color-navy) 80%,
+    var(--color-dark-purple) 100%
+  );
+}
+
+/* Dungeon (Projects) */
+.section-dungeon {
+  background: var(--color-dungeon-floor);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 32px,
+      rgba(0, 0, 0, 0.1) 32px,
+      rgba(0, 0, 0, 0.1) 64px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 32px,
+      rgba(0, 0, 0, 0.1) 32px,
+      rgba(0, 0, 0, 0.1) 64px
+    );
+}
+
+/* Forest (Experience) */
+.section-forest {
+  background: linear-gradient(
+    180deg,
+    var(--color-teal) 0%,
+    var(--color-forest) 50%,
+    var(--color-midnight) 100%
+  );
+}
+
+/* Guild (Contact) */
+.section-guild {
+  background: var(--color-dark-purple);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 48px,
+      rgba(0, 0, 0, 0.2) 48px,
+      rgba(0, 0, 0, 0.2) 96px
+    );
+}
+
+/* ==========================================================================
+   Parallax Container
+   ========================================================================== */
+
+.parallax-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: var(--z-background);
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+/* ==========================================================================
+   Grid Layouts
+   ========================================================================== */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+/* Tablet and down */
+@media (max-width: 768px) {
+  :root {
+    --hud-height: 120px;
+  }
+
+  .game-hud {
+    flex-wrap: wrap;
+    height: auto;
+    padding: var(--space-2);
+    gap: var(--space-2);
+  }
+
+  .hud-left {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-list {
+    gap: var(--space-2);
+  }
+
+  .nav-link {
+    font-size: 6px;
+    padding: var(--space-1);
+  }
+
+  .hud-right {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+  }
+
+  .section-title {
+    font-size: var(--text-sm);
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .bar-container {
+    width: 80px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .player-name {
+    font-size: 6px;
+  }
+
+  .bar-container {
+    width: 60px;
+  }
+
+  .section {
+    padding: var(--space-8) var(--space-2);
+  }
+}
